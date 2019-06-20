@@ -10,4 +10,10 @@ class DogsController < ApplicationController
         render json: dog
     end 
 
+    def destroy
+        dog = Dog.find(params[:id])
+        dog.destroy
+    end
+
+
 end
