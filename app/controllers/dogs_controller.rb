@@ -10,6 +10,12 @@ class DogsController < ApplicationController
         render json: dog
     end 
 
+    def update
+        dog = Dog.find(params[:id])
+        dog.update(boops: params[:boops])
+    end 
+
+
     def destroy
         dog = Dog.find(params[:id])
         dog.destroy
