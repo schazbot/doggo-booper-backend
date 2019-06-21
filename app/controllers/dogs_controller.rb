@@ -6,7 +6,7 @@ class DogsController < ApplicationController
     end
 
     def create 
-        dog = Dog.create(url:params[:url])
+        dog = Dog.create(url:params[:url], name:params[:name])
         render json: dog
     end 
 
