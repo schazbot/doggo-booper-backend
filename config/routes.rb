@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :dogs, only: [:index, :create, :destroy, :update]
   resources :user_dogs, only: [:index, :create, :show]
 
-  post "/auth/create", to: "auth#create"
+  post "/signin", to: "users#signin"
+  get '/validate', to: 'users#validate'
   
   get "/my_dogs", to: "dogs#my_dogs"
 end
