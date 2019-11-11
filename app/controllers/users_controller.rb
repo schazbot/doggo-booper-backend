@@ -20,6 +20,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def my_dogs
+    user = get_current_user
+    if user
+      render json: user.dogs
+    else
+      render json: { error: "Error fetching your dogs" }
+    end
+  end
+
   #   def create
   #     user = User.new(username: params[:username], password: params[:password])
   #     if user.save

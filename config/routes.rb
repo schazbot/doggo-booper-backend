@@ -7,6 +7,5 @@ Rails.application.routes.draw do
 
   post "/signin", to: "users#signin"
   get '/validate', to: 'users#validate'
-  
-  get "/my_dogs", to: "dogs#my_dogs"
+  get "/mydogs", to: "users#my_dogs"
 end
