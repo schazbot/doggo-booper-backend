@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :user_dogs, only: [:index, :create, :show]
 
   post "/signin", to: "users#signin"
-  get '/validate', to: 'users#validate'
+  post "/signup", to: "users#create"
+  get "/validate", to: "users#validate"
   get "/mydogs", to: "users#my_dogs"
 end

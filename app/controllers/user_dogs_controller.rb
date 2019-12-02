@@ -10,6 +10,4 @@ class UserDogsController < ApplicationController
         render json: user_dog
     end
 
-
-
 end
