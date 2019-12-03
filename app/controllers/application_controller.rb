@@ -1,9 +1,11 @@
 class ApplicationController < ActionController::API
+
+
   def get_current_user
     id = decode_token["id"]
     User.find_by(id: id)
   end
-
+  
   def decode_token
     begin
       JWT.decode(token, secret).first

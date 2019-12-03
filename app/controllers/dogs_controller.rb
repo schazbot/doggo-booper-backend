@@ -9,7 +9,9 @@ class DogsController < ApplicationController
   end
 
   def create
+    user = get_current_user
     dog = Dog.create(url: params[:url], name: params[:name])
+    user_dog = UserDog.create(user_id: user.id, dog_id: dog.id)
     render json: dog
   end
 
