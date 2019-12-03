@@ -6,3 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+users = [
+  { username: "charly", password: "charly" },
+  { username: "dan", password: "dan" },
+  { username: "ian", password: "ian" },
+]
+
+User.destroy_all
+
+users.each do |user|
+  User.create user
+  puts "Created user #{user[:username]}, password: #{user[:password]}"
+end
+
+puts "Finished user creation"
